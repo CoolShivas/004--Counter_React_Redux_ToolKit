@@ -66,6 +66,10 @@ const counterSlice = createSlice({
   },
 });
 
-const counterConfigStore = configureStore({});
+const counterConfigStore = configureStore({
+  reducer: {
+    counter: counterSlice.reducer, // Defining the reducer ;
+  },
+});
 
 export default counterConfigStore;
