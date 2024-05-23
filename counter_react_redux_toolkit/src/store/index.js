@@ -82,14 +82,16 @@ const privacySlice = createSlice({
   name: "private",
   initialState: false,
   reducers: {
-    toggler: (currState, action) => {},
+    toggler: (currState, action) => {
+      return (currState = !currState);
+    },
   },
 });
 
 const counterConfigStore = configureStore({
   reducer: {
     counter: counterSlice.reducer, // Defining the reducer ;
-    private: privacySlice.reducer,
+    privacy: privacySlice.reducer,
   },
 });
 

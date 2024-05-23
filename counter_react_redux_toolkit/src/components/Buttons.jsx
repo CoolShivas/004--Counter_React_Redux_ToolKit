@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import styles from "./Buttons.module.css";
 import { useDispatch } from "react-redux";
-import { counterActions } from "../store";
+import { counterActions, privacyActions } from "../store";
 
 const Buttons = () => {
 
@@ -35,7 +35,9 @@ const Buttons = () => {
     };
 
     const handlerOnPrivacyToggle = () => {
-        dispatch({ type: "PRIVACY_TOGGLE" })
+        // dispatch({ type: "PRIVACY_TOGGLE" })
+        // console.log(privacyActions.toggler());
+        dispatch(privacyActions.toggler());
     };
 
     return (
