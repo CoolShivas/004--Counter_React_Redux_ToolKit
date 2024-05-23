@@ -78,12 +78,22 @@ const counterSlice = createSlice({
   },
 });
 
+const privacySlice = createSlice({
+  name: "private",
+  initialState: false,
+  reducers: {
+    toggler: (currState, action) => {},
+  },
+});
+
 const counterConfigStore = configureStore({
   reducer: {
     counter: counterSlice.reducer, // Defining the reducer ;
+    private: privacySlice.reducer,
   },
 });
 
 export const counterActions = counterSlice.actions;
+export const privacyActions = privacySlice.actions;
 
 export default counterConfigStore;
