@@ -1,19 +1,22 @@
 import { useRef } from "react";
 import styles from "./Buttons.module.css";
 import { useDispatch } from "react-redux";
+import { counterActions } from "../store";
 
 const Buttons = () => {
 
     const inputValue = useRef();
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     const handlerOnIncrement = () => {
-        dispatch({ type: "INCREMENT" })
+        // dispatch({ type: "INCREMENT" })
+        console.log("increment called", counterActions.increment());// Calling the increment action ;
     };
 
     const handlerOnDecrement = () => {
-        dispatch({ type: "DECREMENT" })
+        // dispatch({ type: "DECREMENT" })
+        console.log("decrement called", counterActions.decrement());// Calling the decrement action ; 
     };
 
     const handlerOnAddBtn = () => {
