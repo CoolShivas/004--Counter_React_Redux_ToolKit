@@ -60,17 +60,16 @@ const counterSlice = createSlice({
   initialState: { counterValue: 0 },
   reducers: {
     increment: (currState, action) => {
-      console.log(currState, action);
+      currState.counterValue++; // Clicking +1 will increment the value ;
+      //   console.log(currState, action);
     },
     decrement: (currState, action) => {
-      console.log(currState, action);
+      currState.counterValue--; // Clicking -1 will decrement the value ;
+      //   console.log(currState, action);
     },
-    addition: (currState, action) => {
-      console.log(currState, action);
-    },
-    subtraction: (currState, action) => {
-      console.log(currState, action);
-    },
+    addition: (currState, action) => {},
+
+    subtraction: (currState, action) => {},
   },
 });
 

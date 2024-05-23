@@ -7,16 +7,18 @@ const Buttons = () => {
 
     const inputValue = useRef();
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const handlerOnIncrement = () => {
         // dispatch({ type: "INCREMENT" })
-        console.log("increment called", counterActions.increment());// Calling the increment action ;
+        // console.log("increment called", counterActions.increment());// Calling the increment action ;
+        dispatch(counterActions.increment()); // Dispatching the counterActions for increment ;
     };
 
     const handlerOnDecrement = () => {
         // dispatch({ type: "DECREMENT" })
-        console.log("decrement called", counterActions.decrement());// Calling the decrement action ; 
+        // console.log("decrement called", counterActions.decrement());// Calling the decrement action ; 
+        dispatch(counterActions.decrement()); // Dispatching the counterActions for decrement ;
     };
 
     const handlerOnAddBtn = () => {
