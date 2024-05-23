@@ -22,13 +22,15 @@ const Buttons = () => {
     };
 
     const handlerOnAddBtn = () => {
-        dispatch({ type: "ADDITION", payload: { num: Number(inputValue.current.value) } })
+        // dispatch({ type: "ADDITION", payload: { num: Number(inputValue.current.value) } })
         // Here, Number(inputValue.current.value) will convert it into number format whereas if we are going to use num : inputValue.current.value like this then it will give a string only;
+        dispatch(counterActions.addition({ num: inputValue.current.value }));
         inputValue.current.value = "";
     };
 
     const handlerOnSubtractBtn = () => {
-        dispatch({ type: "SUBTRACTION", payload: { num: Number(inputValue.current.value) } })
+        // dispatch({ type: "SUBTRACTION", payload: { num: Number(inputValue.current.value) } })
+        dispatch(counterActions.subtraction({ num: Number(inputValue.current.value) }));
         inputValue.current.value = "";
     };
 

@@ -67,9 +67,14 @@ const counterSlice = createSlice({
       currState.counterValue--; // Clicking -1 will decrement the value ;
       //   console.log(currState, action);
     },
-    addition: (currState, action) => {},
+    addition: (currState, action) => {
+      currState.counterValue =
+        currState.counterValue + Number(action.payload.num);
+    },
 
-    subtraction: (currState, action) => {},
+    subtraction: (currState, action) => {
+      currState.counterValue -= action.payload.num;
+    },
   },
 });
 
