@@ -52,7 +52,19 @@
 
 // // Now, going to use REDUX TOOLKIT whereas the above one is formed using redux and react-redux :-
 
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, createSlice } from "@reduxjs/toolkit";
+
+// // Making first slice i.e, Counter ;
+const counterSlice = createSlice({
+  name: "counter",
+  initialState: { counterValue: 0 },
+  reducers: {
+    increment: (currState, action) => {},
+    decrement: (currState, action) => {},
+    addition: (currState, action) => {},
+    subtraction: (currState, action) => {},
+  },
+});
 
 const counterConfigStore = configureStore({});
 
