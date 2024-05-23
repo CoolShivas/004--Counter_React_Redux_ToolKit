@@ -51,42 +51,9 @@
 //////************************************************************************************************************* */
 
 // // Now, going to use REDUX TOOLKIT whereas the above one is formed using redux and react-redux :-
-
-import { configureStore, createSlice } from "@reduxjs/toolkit";
-
-// // Making first slice i.e, Counter ;
-const counterSlice = createSlice({
-  name: "counter",
-  initialState: { counterValue: 0 },
-  reducers: {
-    increment: (currState, action) => {
-      currState.counterValue++; // Clicking +1 will increment the value ;
-      //   console.log(currState, action);
-    },
-    decrement: (currState, action) => {
-      currState.counterValue--; // Clicking -1 will decrement the value ;
-      //   console.log(currState, action);
-    },
-    addition: (currState, action) => {
-      currState.counterValue =
-        currState.counterValue + Number(action.payload.num);
-    },
-
-    subtraction: (currState, action) => {
-      currState.counterValue -= action.payload.num;
-    },
-  },
-});
-
-const privacySlice = createSlice({
-  name: "private",
-  initialState: false,
-  reducers: {
-    toggler: (currState, action) => {
-      return (currState = !currState);
-    },
-  },
-});
+import counterSlice from "./counter";
+import privacySlice from "./privacy";
+import { configureStore } from "@reduxjs/toolkit";
 
 const counterConfigStore = configureStore({
   reducer: {
@@ -94,8 +61,5 @@ const counterConfigStore = configureStore({
     privacy: privacySlice.reducer,
   },
 });
-
-export const counterActions = counterSlice.actions;
-export const privacyActions = privacySlice.actions;
 
 export default counterConfigStore;

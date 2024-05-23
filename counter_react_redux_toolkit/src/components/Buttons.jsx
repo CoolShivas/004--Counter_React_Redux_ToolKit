@@ -1,7 +1,10 @@
+import { counterActions } from "../store/counter";
+import { privacyActions } from "../store/privacy";
 import { useRef } from "react";
 import styles from "./Buttons.module.css";
 import { useDispatch } from "react-redux";
-import { counterActions, privacyActions } from "../store";
+// import { counterActions, privacyActions } from "../store";
+
 
 const Buttons = () => {
 
