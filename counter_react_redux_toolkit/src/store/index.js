@@ -59,10 +59,18 @@ const counterSlice = createSlice({
   name: "counter",
   initialState: { counterValue: 0 },
   reducers: {
-    increment: (currState, action) => {},
-    decrement: (currState, action) => {},
-    addition: (currState, action) => {},
-    subtraction: (currState, action) => {},
+    increment: (currState, action) => {
+      console.log(currState, action);
+    },
+    decrement: (currState, action) => {
+      console.log(currState, action);
+    },
+    addition: (currState, action) => {
+      console.log(currState, action);
+    },
+    subtraction: (currState, action) => {
+      console.log(currState, action);
+    },
   },
 });
 
@@ -71,5 +79,7 @@ const counterConfigStore = configureStore({
     counter: counterSlice.reducer, // Defining the reducer ;
   },
 });
+
+export const counterActions = counterSlice.actions;
 
 export default counterConfigStore;
